@@ -1,0 +1,108 @@
+table {
+  width: 100%;
+  /* margin: auto;
+  text-align: center; */
+}
+/* .mat-column-select {
+  overflow: initial;
+} */
+.list-container {
+  display: flex;
+  flex-direction: column;
+  /* max-height: 500px;
+  min-width: 300px; */
+}
+th, td {
+  overflow: hidden;
+  width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fullInput{
+  width: 60%;
+}
+/* td{
+  word-wrap: break-word;
+  overflow-wrap: normal;
+  word-break: break-all;
+  overflow-wrap: break-word;
+
+} */
+/* .mat-table {
+  overflow: auto;
+  max-height: auto;
+} */
+
+/* .mat-column-select {
+  overflow: visible;
+} */
+
+.mat-column-courseReview {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}
+.mat-column-ProfReview {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}
+.mat-column-ratings {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}
+.mat-column-Phone{
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}
+.mat-column-ProfName{
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}
+
+mat-spinner{
+  margin: auto;
+}
+
+.mat-column-ProfSub{
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}
+
+.mat-column-courseName{
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}
+.mat-column-StudentId{
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}
+.mat-column-StudentName{
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+}

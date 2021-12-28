@@ -1,0 +1,17 @@
+mat-card {
+  max-width: auto;
+  margin: 1em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+.action-button .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+.example-container >.mat-form-field {
+display: inline-block;
+  width: 300px;
+  margin-left: 20px;
+}
