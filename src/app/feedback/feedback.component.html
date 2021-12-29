@@ -1,18 +1,20 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <!--
-      <span>Welcome {{loggedUser | retrivename}}!</span> -->
+
+      <span *ngIf="!isLoading">Welcome {{loggedUser | retrivename}}!</span>
     <span class="menu-spacer"></span>
     <!-- <div>
       <a mat-button routerLink="/empFeedback"> New Feedback </a>
       <a mat-button routerLink="/feedbackList"> List </a>
     </div> -->
   </mat-toolbar-row>
+  
 </mat-toolbar>
 <mat-toolbar color="warn" *ngIf="error">
 {{error}}
 </mat-toolbar>
-<mat-card>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-card *ngIf="!isLoading">
   <mat-card-content>
     <form [formGroup]="form" (ngSubmit)="onSubmitFeedBack(form)">
       <mat-card-title>Student Info</mat-card-title>
@@ -205,3 +207,6 @@
     </form>
   </mat-card-content>
 </mat-card>
+<mat-toolbar color="warn" *ngIf="error">
+  {{error}}
+  </mat-toolbar>

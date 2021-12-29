@@ -12,11 +12,11 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
 export class FeedbacklistComponent implements OnInit,OnDestroy {
 isLoading=false;
   feedbackList: any=[];
-  displayedColumns: string[] = ['StudentId','StudentName','Phone','sem','division','BRANCH','ProfName','ProfSub','ProfReview','courseName','courseReview','ratings'];
+  displayedColumns: string[] = ['action','StudentId','StudentName','Phone','sem','division','BRANCH','ProfName','ProfSub','ProfReview','courseName','courseReview','ratings'];
   dataSource: any;
   loggedUser: string|null;
   editMode: boolean;
-  editListData: {project: '', ratings: '', comments: ''};
+
   subscription: Subscription;
   editedItemIndex: number;
   editForm: FormGroup;
@@ -72,13 +72,31 @@ s:Subscription
   //    this.dataSource = [...this.dataSource];
   //    this.editMode = false;
   //  }
-  // deleteList(index: number) {
-  //   this.dataSource.splice(index, 1);
-  //   this.dataSource = [...this.dataSource];
-  // }
+  onDelete(data:any) {
+
+   console.log(data)
+
+
+   this.s= this.service.deleteFeedback(data).subscribe(data=>{
+      this.isLoading=true;
+     this.s= this.service.listFeedback().subscribe(data=>{
+        this.feedbackList=data
+        this.feedbackList = new MatTableDataSource(this.feedbackList);
+        const ELEMENT_DATA: any[] = this.feedbackList ;
+        console.log(this.feedbackList)
+        console.log(ELEMENT_DATA);
+        this.dataSource = ELEMENT_DATA;
+        this.isLoading=false
+      })
+    })
+
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  check(i:any){
+    console.log(i)
   }
 ngOnDestroy(): void {
     this.s.unsubscribe();

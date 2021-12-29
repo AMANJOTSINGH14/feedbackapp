@@ -18,7 +18,10 @@ export class EmployeeServiceService {
    return this.http.post('http://localhost:3000/api/post',obj)
     // this.storeFeedback.push(obj);
     }
-
+deleteFeedback(index:any){
+  console.log(index)
+return this.http.delete('http://localhost:3000/api/post/'+index)
+}
     listFeedback(){
       // console.log(this.storeFeedback)
       return this.http.get<any>('http://localhost:3000/api/post').pipe(

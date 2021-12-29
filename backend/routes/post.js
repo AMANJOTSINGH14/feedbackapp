@@ -63,5 +63,18 @@ Post.find().then((documents)=>{
   });
 })
 
+app.delete('/:index',auth,(req,res)=>{
+console.log(req.body)
+  Post.deleteOne({StudentId:req.params.index}).then(data=>{
+    console.log(req.body)
+    res.status(200).send({
+      message:'deleted'
+    })
+  }).catch(error => {
+    res.status(500).send({
+      message: "unable to delete!"
+    });
+  });
 
+})
 module.exports = app;

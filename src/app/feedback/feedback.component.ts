@@ -4,6 +4,10 @@ import { StarRatingColor } from '../star-rating/star-rating.component';
 import { EmployeeServiceService } from '../employee-service.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
+import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EntryComponent } from '../entry/entry.component';
+
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
@@ -16,14 +20,21 @@ loggedUser: string|null;
 form: FormGroup;
 rating:number = 1;
 list: any;
+isLoading:boolean
   starCount:number = 5;
   starColor:StarRatingColor = StarRatingColor.accent;
 
   constructor(private service :EmployeeServiceService,
-    private router: Router) { }
+    private router: Router,private auth:AuthService,private Dialog:MatDialog) { }
 
   ngOnInit(): void {
-    // this.loggedUser = sessionStorage.getItem('loggedUser');
+this.isLoading=true
+    this.auth.isLoadingSubject.subscribe(data=>{
+      this.isLoading=false
+    })
+    this.auth.emailSubject.subscribe(data=>{
+      this.loggedUser=data
+    })
     this.form = new FormGroup({
       StudentName:new FormControl(null,Validators.required),
       StudentId:new FormControl(null,Validators.required),
@@ -50,6 +61,11 @@ list: any;
     data.value.ratings = this.rating;
     this.service.addFeedback(data.value).subscribe(data=>{
       console.log(data)
+        // this.router.navigate(['/feedbackList']);
+        this.form.reset();
+        const config=new MatDialogConfig();
+config.width="60%"
+        this.Dialog.open(EntryComponent,config)
     },error=>{
       if(error){
         this.error=error.error.message

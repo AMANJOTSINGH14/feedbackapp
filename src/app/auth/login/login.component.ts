@@ -9,8 +9,9 @@ import { AuthService } from '../auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit ,OnDestroy {
 unsub:Subscription
+
 error:any;
 isLoading=false;
 userStatus:boolean=false;
@@ -21,13 +22,17 @@ userStatus:boolean=false;
       console.log(data)
          this.error=data
        })
+
+
+
+
   }
   onLogin(form:NgForm){
     this.auth.login(form.value.email,form.value.password)
-
-    this.router.navigate(['/empFeedback'])
-  console.log(form)
-
+   this.router.navigate(['/empFeedback'])
   }
+ngOnDestroy(): void {
+    this.unsub.unsubscribe()
 
+}
   }

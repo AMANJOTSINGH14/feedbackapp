@@ -27,7 +27,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { NgxMaskModule } from 'ngx-mask';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { InterceptorInterceptor } from './auth/interceptor.interceptor';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { EntryComponent } from './entry/entry.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { InterceptorInterceptor } from './auth/interceptor.interceptor';
     HeaderComponent,
     RetrivenamePipe,
     FeedbacklistComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    EntryComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +59,11 @@ MatSnackBarModule,
 MatSelectModule,
 NgxMaskModule.forRoot(),
 HttpClientModule,
-MatProgressSpinnerModule
+MatProgressSpinnerModule,
+MatDialogModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:InterceptorInterceptor,multi:true}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[EntryComponent]
 })
 export class AppModule { }
