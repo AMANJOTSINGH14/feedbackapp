@@ -19,3 +19,10 @@ input{
   text-decoration: none;
   color: white;
 }
+mat-card{
+  margin-right: 5px;
+  height: 35px;
+}
+img{
+  height: 50px;
+}

@@ -16,6 +16,7 @@ authListener=new BehaviorSubject<boolean>(false);
 userSubject=new BehaviorSubject<any>(null)
 errorSubject=new Subject<any>()
 error:any;
+signupsubject=new Subject<any>()
 constructor(private http:HttpClient) { }
 
 isAuth(){
@@ -32,6 +33,7 @@ createUser(email:string,password:string){
   this.http.post("http://localhost:3000/api/user/signup",authData).subscribe(
     response=>{this.authListener.next(false)
       console.log(response)
+      this.signupsubject.next(true);
       this.isLoadingSubject.next(false)
     },error=>{
 

@@ -12,7 +12,7 @@ import { MatProgressSpinner } from '@angular/material/progress-spinner';
 export class FeedbacklistComponent implements OnInit,OnDestroy {
 isLoading=false;
   feedbackList: any=[];
-  displayedColumns: string[] = ['action','StudentId','StudentName','Phone','sem','division','BRANCH','ProfName','ProfSub','ProfReview','courseName','courseReview','ratings'];
+  displayedColumns: string[] = ['action','StudentId','StudentName','Phone','sem','division','BRANCH','ProfName','ProfSubject','ProfReview','courseName','courseReview','ratings'];
   dataSource: any;
   loggedUser: string|null;
   editMode: boolean;

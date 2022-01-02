@@ -26,7 +26,7 @@ const postSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  ProfSub: {
+  ProfSubject: {
     type: String,
     required: true,
   },

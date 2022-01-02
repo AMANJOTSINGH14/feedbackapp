@@ -18,7 +18,7 @@ app.post('',auth,(req,res)=>{
     ProfName:req.body.ProfName,
     BRANCH:req.body.BRANCH,
     division:req.body.division,
-    ProfSub:req.body.ProfSub,
+    ProfSubject:req.body.ProfSubject,
     Phone:req.body.Phone,
     ProfReview:req.body.ProfReview,
     courseName:req.body.courseName,

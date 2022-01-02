@@ -4,3 +4,21 @@ mat-form-field{
 mat-spinner{
   margin: auto;
 }
+.mat-card{
+  display:flex;
+  flex-direction: column;
+  }
+
+
+  .mat-card-footer {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  }
+
+
+  .mat-card-content{
+  flex-grow: 1;
+  overflow: auto;
+  outline: 1px solid red;
+  }

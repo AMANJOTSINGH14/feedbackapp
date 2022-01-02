@@ -5,7 +5,7 @@ export class formShape{
   ProfName:string
   BRANCH:string
   division:number
-  ProfSub:string
+  ProfSubject:string
   Phone:number
   ProfReview:string
   courseName:string

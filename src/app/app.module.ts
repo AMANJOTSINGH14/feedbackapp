@@ -29,6 +29,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { InterceptorInterceptor } from './auth/interceptor.interceptor';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EntryComponent } from './entry/entry.component';
+import { DevelopedComponent } from './developed/developed.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,8 @@ import { EntryComponent } from './entry/entry.component';
     RetrivenamePipe,
     FeedbacklistComponent,
     StarRatingComponent,
-    EntryComponent
+    EntryComponent,
+    DevelopedComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,9 @@ MatSelectModule,
 NgxMaskModule.forRoot(),
 HttpClientModule,
 MatProgressSpinnerModule,
-MatDialogModule
+MatDialogModule,
+MatDividerModule,
+MatProgressBarModule
   ],
   providers: [{provide:HTTP_INTERCEPTORS,useClass:InterceptorInterceptor,multi:true}],
   bootstrap: [AppComponent],

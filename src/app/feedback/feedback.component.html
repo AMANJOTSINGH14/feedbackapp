@@ -8,7 +8,7 @@
       <a mat-button routerLink="/feedbackList"> List </a>
     </div> -->
   </mat-toolbar-row>
-  
+
 </mat-toolbar>
 <mat-toolbar color="warn" *ngIf="error">
 {{error}}
@@ -62,46 +62,44 @@
       </mat-form-field> -->
 
       <div class="example-container">
-        <mat-form-field appearance="fill">
-          <mat-select
-            formControlName="BRANCH"
-            placeholder="Select your branch"
-            required
-          >
-            <mat-option value="COMPUTER">COMPUTER ENGINNERING</mat-option>
-            <mat-option value="CIVIL">CIVIL ENGINNERING</mat-option>
-            <mat-option value="IT">I.T</mat-option>
-            <mat-option value="ENTC">ELECTRICAL ENGINNERING</mat-option>
-            <mat-option value="CHEMICAL">CHEMICAL ENGINNERING</mat-option>
+        <mat-form-field>
+          <mat-select formControlName="sem" placeholder="Enter semester" required>
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+            <mat-option value="6">6</mat-option>
+            <mat-option value="7">7</mat-option>
+            <mat-option value="8">8</mat-option>
           </mat-select>
-          <mat-error>Select a valid branch</mat-error>
+          <mat-error>Enter a valid semester</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="fill">
-          <input
-            matInput
-            type="number"
-            maxlength="1"
-            placeholder="Eg.1"
-            formControlName="division"
-            required
-          />
+
+        <mat-form-field>
+          <mat-select formControlName="division" placeholder="Enter division" required>
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+              </mat-select>
           <mat-error> Enter division</mat-error>
         </mat-form-field>
       </div>
       <mat-form-field appearance="fill">
-        <mat-select formControlName="sem" placeholder="Enter semester" required>
-          <mat-option value="1">1</mat-option>
-          <mat-option value="2">2</mat-option>
-          <mat-option value="3">3</mat-option>
-          <mat-option value="4">4</mat-option>
-          <mat-option value="5">5</mat-option>
-          <mat-option value="6">6</mat-option>
-          <mat-option value="7">7</mat-option>
-          <mat-option value="8">8</mat-option>
+        <mat-select
+          formControlName="BRANCH"
+          placeholder="Select your branch"
+          required
+        >
+          <mat-option value="COMPUTER">COMPUTER ENGINNERING</mat-option>
+          <mat-option value="CIVIL">CIVIL ENGINNERING</mat-option>
+          <mat-option value="IT">I.T</mat-option>
+          <mat-option value="ENTC">ELECTRICAL ENGINNERING</mat-option>
+          <mat-option value="CHEMICAL">CHEMICAL ENGINNERING</mat-option>
         </mat-select>
-        <mat-error>Enter a valid semester</mat-error>
+        <mat-error>Select a valid branch</mat-error>
       </mat-form-field>
-      <mat-card-title>Professor Info</mat-card-title>
+      <mat-card-title class="ma">Professor Review</mat-card-title>
       <mat-form-field class="full-width-input">
         <input
           matInput
@@ -116,8 +114,8 @@
         <input
           matInput
           type="text"
-          placeholder="Enter subject"
-          formControlName="ProfSub"
+          placeholder="Enter Subject"
+          formControlName="ProfSubject"
           required
         />
         <mat-error> This field cannot be empty </mat-error>
@@ -136,7 +134,7 @@
         <mat-hint slot="end">{{ inputsss.value?.length || 0 }}/250</mat-hint>
         <mat-error> Enter a valid review </mat-error>
       </mat-form-field>
-      <mat-card-title>Course Review</mat-card-title>
+      <mat-card-title class="ma">Course Review</mat-card-title>
       <mat-form-field class="full-width-input">
         <input
           matInput
@@ -152,7 +150,7 @@
           matInput
           type="text"
           placeholder="Enter subject"
-          formControlName="ProfSub"
+          formControlName="ProfSubject"
           required
         />
         <mat-error> This field cannot be empty </mat-error>
@@ -178,6 +176,7 @@
           <option value="HealthCare">HealthCare</option>
         </select>
       </mat-form-field> -->
+      <mat-card-title class="ma">Overall Rating</mat-card-title>
       <mat-star-rating
         [rating]="rating"
         [starCount]="starCount"

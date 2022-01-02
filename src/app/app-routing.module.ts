@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { DevelopedComponent } from './developed/developed.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FeedbacklistComponent } from './feedbacklist/feedbacklist.component';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path: 'empFeedback', component: FeedbackComponent,canActivate:[AuthGuard]},
   {path: 'feedbackList', component: FeedbacklistComponent,canActivate:[AuthGuard]},
+  {path: 'developed', component: DevelopedComponent,canActivate:[AuthGuard]},
   {path: "",redirectTo: '/login',pathMatch: 'full'}
 ];
 
